@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-1 Vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+        <div class="boxes">
+            <h1 > {{ title }} </h1>
+            <button @click="color = 'green'">Зеленый</button>            
+            <button @click="color = 'red'">Красный</button> 
+            <button @click="color = 'orange'">Оранжевый</button> 
+            <input type="text" v-model="number">
+            <p v-if="number.length == 0" :class="color">Поле пустое</p>
+            <p v-else-if="number >= 1 && number < 20" :class="color">Вы ввели число {{ number }} </p>
+            <p v-else-if="number > 20">Вы ввели число больше 20</p>
+            <p v-else="number == !NaN">Вы ввели не число</p>
+        </div>
+        
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
